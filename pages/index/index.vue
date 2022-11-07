@@ -1,16 +1,15 @@
 <template>
 	<view class="container">
 		<uni-card :is-shadow="false" is-full>
-			<text class="uni-h6">这是一台神奇的打印机。</text>
+			<text class="uni-h3 text-center">这是一台神奇的打印机。</text>
 			
 		</uni-card>
 
 		<uni-section title="Hi!" type="line">
-			<view class="example">
+			<view class="example uni-h4">
 				<button type="primary" @click="goto('printMsg')">打印新消息</button>
 				<br>
-				<button type="default" @click="goto('printCategory')">打印预设消息</button>
-				
+				<button type="primary" @click="goto('printCategory')">打印预设消息</button>
 			</view>
 		</uni-section>
 
@@ -34,6 +33,11 @@
 </script>
 
 <style lang="scss">
+	
+	
+	.container{
+			font-size: 20px !important;
+		}
 	.example {
 		padding: 15px;
 		background-color: #fff;
@@ -61,5 +65,9 @@
 		height: 35px;
 		line-height: 35px;
 		margin-left: 10px;
+	}
+	.text-center {
+		text-align: center;
+		display: block;
 	}
 </style>

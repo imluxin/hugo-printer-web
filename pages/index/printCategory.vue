@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<uni-card :is-shadow="false" is-full>
-			<text class="uni-h6">这是一台神奇的打印机。</text>
+			<text class="uni-h3 text-center">这是一台神奇的打印机。</text>
 		</uni-card>
 
 		<uni-section title="填写打印内容" type="line">
@@ -35,6 +35,14 @@
 					{
 						value: 1,
 						text: "三年级诗词"
+					},
+					{
+						value: 2,
+						text: "请给我来一杯水"
+					},
+					{
+						value: 3,
+						text: "请帮我拿走水杯"
 					}
 				],
 				// 校验表单数据
@@ -79,7 +87,7 @@
 					// 	title: `校验通过`
 					// });
 					uni.request({
-					    url: 'http://printer.imluxin.com/api/printer/printerGradeThreePoem', //仅为示例，并非真实接口地址。
+					    url: 'http://printer.imluxin.com/api/printer/printerCategory', //仅为示例，并非真实接口地址。
 					    data: {
 					        code: res.code,
 							printerCategory: res.printerCategory
@@ -153,5 +161,9 @@
 		height: 35px;
 		line-height: 35px;
 		margin-left: 10px;
+	}
+	.text-center {
+		text-align: center;
+		display: block;
 	}
 </style>

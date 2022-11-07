@@ -1,13 +1,13 @@
 <template>
 	<view class="container">
 		<uni-card :is-shadow="false" is-full>
-			<text class="uni-h6">这是一台神奇的打印机。</text>
+			<text class="uni-h3 text-center">这是一台神奇的打印机。</text>
 		</uni-card>
 
 		<uni-section title="填写打印内容" type="line">
 			<view class="example">
 				<!-- 基础表单校验 -->
-				<uni-forms ref="valiForm" :rules="rules" :model="valiFormData" labelWidth="80px" :label-position="top">
+				<uni-forms ref="valiForm" :rules="rules" :model="valiFormData" labelWidth="80px" label-position="top" :label-style="{'font-size':'20px'}">
 					<uni-forms-item label="Code" required name="code">
 						<uni-easyinput v-model="valiFormData.code" placeholder="请输入Code" />
 					</uni-forms-item>
@@ -15,7 +15,7 @@
 						<uni-easyinput v-model="valiFormData.title" placeholder="请输入标题" />
 					</uni-forms-item>
 					<uni-forms-item label="打印内容" required name="content">
-						<uni-easyinput type="textarea" v-model="valiFormData.content" placeholder="请输入自我介绍" />
+						<uni-easyinput type="textarea" v-model="valiFormData.content" placeholder="请输入打印内容" />
 					</uni-forms-item>
 				</uni-forms>
 				<button type="primary" @click="submit('valiForm')">提交</button>
@@ -153,5 +153,9 @@
 		height: 35px;
 		line-height: 35px;
 		margin-left: 10px;
+	}
+	.text-center {
+		text-align: center;
+		display: block;
 	}
 </style>
