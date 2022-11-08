@@ -7,17 +7,14 @@
 		<uni-section title="填写打印内容" type="line">
 			<view class="example">
 				<!-- 基础表单校验 -->
-				<uni-forms ref="valiForm" :rules="rules" :model="valiFormData" labelWidth="80px" :label-position="top">
+				<uni-forms ref="valiForm" :rules="rules" :model="valiFormData" labelWidth="120px" label-position="top">
 					<uni-forms-item label="Code" required name="code">
-						<uni-easyinput v-model="valiFormData.code" placeholder="请输入Code" />
+						<uni-easyinput placeholder="请输入Code" />
 					</uni-forms-item>
 					<uni-forms-item label="打印内容" required name="printerCategory">
-						<uni-data-select v-model="valiFormData.printerCategory" :localdata="printerCategoryRange" >
+						<uni-data-select :localdata="printerCategoryRange" >
 						</uni-data-select>
 					</uni-forms-item>
-					<!-- <uni-forms-item label="自我介绍" required name="introduction">
-						<uni-easyinput type="textarea" v-model="valiFormData.introduction" placeholder="请输入自我介绍" />
-					</uni-forms-item> -->
 				</uni-forms>
 				<button type="primary" @click="submit('valiForm')">提交</button>
 			</view>
@@ -31,25 +28,11 @@
 	export default {
 		data() {
 			return {
-				printerCategoryRange: [
-					{
-						value: 1,
-						text: "三年级诗词"
-					},
-					{
-						value: 2,
-						text: "请给我来一杯水"
-					},
-					{
-						value: 3,
-						text: "请帮我拿走水杯"
-					}
-				],
+				printerCategoryRange: [],
 				// 校验表单数据
 				valiFormData: {
 					code: '',
-					introduction: '',
-					printerCategory: 1
+					printerCategory: ''
 				},
 				// 校验规则
 				rules: {
@@ -67,17 +50,18 @@
 							required: true,
 							errorMessage: '打印内容不能为空'
 						}]
-					},
-					introduction: {
-						rules: [{
-							required: true,
-							errorMessage: '技能不能为空'
-						}]
-					},
+					}
 				}
 			}
 		},
-		onLoad() {},
+		onLoad() {
+			uni.request({
+				url:'http://printer.imluxin.com/api/printer/listCategory',
+				success: (res) => {
+						this.printerCategoryRange = res.data;
+				    }
+			})
+		},
 		onReady() {},
 		methods: {
 			submit(ref) {
@@ -134,6 +118,11 @@
 </script>
 
 <style lang="scss">
+	.text {
+    font-size: 36px;
+    color: #666;
+    margin-top: 5px;
+  }
 	.example {
 		padding: 15px;
 		background-color: #fff;

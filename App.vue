@@ -25,8 +25,12 @@
 
 	/* #endif */
 	.example-info {
-		font-size: 14px;
+		// font-size: 14px;
 		color: #333;
 		padding: 10px;
+	}
+	
+	.ulist-font-20 span {
+		font-size: 20px !important;
 	}
 </style>

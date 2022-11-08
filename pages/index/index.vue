@@ -2,17 +2,19 @@
 	<view class="container">
 		<uni-card :is-shadow="false" is-full>
 			<text class="uni-h3 text-center">这是一台神奇的打印机。</text>
-			
 		</uni-card>
-
-		<uni-section title="Hi!" type="line">
-			<view class="example uni-h4">
-				<button type="primary" @click="goto('printMsg')">打印新消息</button>
-				<br>
-				<button type="primary" @click="goto('printCategory')">打印预设消息</button>
-			</view>
+		
+		<uni-section title="选择功能" type="line">
+			<uni-list>
+				<uni-list-item title="打印新消息" note="" link to="/pages/index/printMsg" class="ulist-font-20" thumb="https://files.catbox.moe/gr4l34.png" thumb-size="lg" >
+					
+					<!-- <template v-slot:body>
+							<text class="slot-box slot-text uni-h4">打印新消息</text>
+					</template> -->
+				</uni-list-item>
+				<uni-list-item title="打印预设消息" note="" link to="/pages/index/printCategory" class="ulist-font-20" thumb="https://files.catbox.moe/4bofz6.png" thumb-size="lg" ></uni-list-item>
+			</uni-list>
 		</uni-section>
-
 
 	</view>
 </template>
@@ -22,22 +24,11 @@
 		data() {},
 		onLoad() {},
 		onReady() {},
-		methods: {
-			goto(ref) {
-				uni.navigateTo({
-					url: '/pages/index/'+ref
-				})
-			},
-		}
+		methods: {}
 	}
 </script>
 
 <style lang="scss">
-	
-	
-	.container{
-			font-size: 20px !important;
-		}
 	.example {
 		padding: 15px;
 		background-color: #fff;
@@ -69,5 +60,8 @@
 	.text-center {
 		text-align: center;
 		display: block;
+	}
+	.u-font-3 {
+		font-size: 48px;
 	}
 </style>

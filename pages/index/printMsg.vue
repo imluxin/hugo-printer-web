@@ -7,14 +7,14 @@
 		<uni-section title="填写打印内容" type="line">
 			<view class="example">
 				<!-- 基础表单校验 -->
-				<uni-forms ref="valiForm" :rules="rules" :model="valiFormData" labelWidth="80px" label-position="top" :label-style="{'font-size':'20px'}">
-					<uni-forms-item label="Code" required name="code">
+				<uni-forms ref="valiForm" :rules="rules" :model="valiFormData" labelWidth="80px" label-position="top" class="uni-h2" label-style="{'font-size':'20px'}">
+					<uni-forms-item label="Code" required name="code" class="ulist-font-20">
 						<uni-easyinput v-model="valiFormData.code" placeholder="请输入Code" />
 					</uni-forms-item>
-					<uni-forms-item label="标题" required name="title">
-						<uni-easyinput v-model="valiFormData.title" placeholder="请输入标题" />
+					<uni-forms-item label="标题" required name="title" class="ulist-font-20">
+						<uni-easyinput type="textarea" class="uni-h2" v-model="valiFormData.title" placeholder="请输入标题" />
 					</uni-forms-item>
-					<uni-forms-item label="打印内容" required name="content">
+					<uni-forms-item label="打印内容" name="content" class="ulist-font-20">
 						<uni-easyinput type="textarea" v-model="valiFormData.content" placeholder="请输入打印内容" />
 					</uni-forms-item>
 				</uni-forms>
@@ -58,13 +58,7 @@
 							required: true,
 							errorMessage: '标题不能为空'
 						}]
-					},
-					content: {
-						rules: [{
-							required: true,
-							errorMessage: '打印内容不能为空'
-						}]
-					},
+					}
 				}
 			}
 		},
