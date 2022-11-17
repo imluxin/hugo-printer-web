@@ -7,7 +7,7 @@
 		<uni-section title="填写打印内容" type="line">
 			<view class="example">
 				<!-- 基础表单校验 -->
-				<uni-forms ref="valiForm" :rules="rules" :model="valiFormData" labelWidth="80px" label-position="top" class="uni-h2" label-style="{'font-size':'20px'}">
+				<uni-forms ref="valiForm" :rules="rules" :model="valiFormData" labelWidth="120px" label-position="top" class="uni-h2" label-style="{'font-size':'20px'}">
 					<uni-forms-item label="Code" required name="code" class="ulist-font-20">
 						<uni-easyinput v-model="valiFormData.code" placeholder="请输入Code" />
 					</uni-forms-item>

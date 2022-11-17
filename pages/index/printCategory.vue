@@ -9,10 +9,10 @@
 				<!-- 基础表单校验 -->
 				<uni-forms ref="valiForm" :rules="rules" :model="valiFormData" labelWidth="120px" label-position="top">
 					<uni-forms-item label="Code" required name="code">
-						<uni-easyinput placeholder="请输入Code" />
+						<uni-easyinput v-model="valiFormData.code" placeholder="请输入Code" />
 					</uni-forms-item>
 					<uni-forms-item label="打印内容" required name="printerCategory">
-						<uni-data-select :localdata="printerCategoryRange" >
+						<uni-data-select v-model="valiFormData.printerCategory" :localdata="printerCategoryRange" >
 						</uni-data-select>
 					</uni-forms-item>
 				</uni-forms>
